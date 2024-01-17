@@ -18,6 +18,7 @@ public class Lab1Test {
 
 	@Test
 	public void problem1() {
+		assertEquals("oW", Main.problem1_middle("HelloWorld"));
 		assertEquals("ri", Main.problem1_middle("string"));
 		assertEquals("od", Main.problem1_middle("code"));
 		assertEquals("Oh", Main.problem1_middle("Oh"));
@@ -42,12 +43,13 @@ public class Lab1Test {
 		assertEquals("Hello there", Main.problem2_removeChars("Hello there"));
 		assertEquals("Hexllo", Main.problem2_removeChars("Hexllo"));
 		assertEquals("Hxllo", Main.problem2_removeChars("Hxllox"));
+		assertEquals("xxxx", Main.problem2_removeChars("xxxxxx"));
 	}
 
 	@Test
 	public void problem3() {
 		// make 5 test runs:
-		for (int i = 1; i < 6; i++) {
+		for (int i = 1; i < 11; i++) {
 			String result = Main.problem3_chooseAnswers(i);
 			boolean correct = true;
 
@@ -109,6 +111,19 @@ public class Lab1Test {
 		momsSavings.deposit(12);
 		momsSavings.deductMonthlyCharge();
 		assertEquals(1071.75, momsSavings.getBalance(), EPSILON);
+		BankAccount dadsSavings = new BankAccount(500, 3);
+		dadsSavings.setTransactionFee(1.00);
+		dadsSavings.deposit(500);
+		dadsSavings.deposit(500);
+		dadsSavings.deposit(500);
+		dadsSavings.deductMonthlyCharge();
+		assertEquals(2000, dadsSavings.getBalance(), EPSILON);
+		dadsSavings.deposit(500);
+		dadsSavings.deposit(500);
+		dadsSavings.deposit(500);
+		dadsSavings.deposit(500);
+		dadsSavings.deductMonthlyCharge();
+		assertEquals(3999.00, dadsSavings.getBalance(), EPSILON);
 	}
 
 	@Test

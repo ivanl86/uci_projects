@@ -22,6 +22,13 @@ public class Sheet {
 		width = 841;
 		length = 1189;
 	}
+	
+	private Sheet(int paperSize, int width, int length) {
+		this.paperSize = paperSize;
+		this.name = "A" + paperSize;
+		this.width = width;
+		this.length = length;
+	}
 
 	
 	/**
@@ -53,12 +60,7 @@ public class Sheet {
 	 * @return a sheet that is cut in half along the length
 	 */
 	public Sheet cutInHalf() {
-		int temp;
-		temp = width;
-		width = length / 2;
-		length = temp;
-		++paperSize;
-		name = "A" + paperSize;
-		return this; // FIX ME
+		Sheet newSheet = new Sheet(paperSize + 1, length / 2, width);
+		return newSheet; // FIX ME
 	}
 }

@@ -81,5 +81,6 @@ public class BankAccount {
 		// FILL IN
 		if (totalTransactions > totalFreeTransactions)
 			currentBalance -= (totalTransactions - totalFreeTransactions) * transactionFee;
+		totalTransactions = 0;
 	}
 }
