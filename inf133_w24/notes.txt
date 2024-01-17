@@ -1,0 +1,71 @@
+Whitespace and new line are ignored in HTML
+
+<element HTML attribute name = "attribute value">
+
+HTML attribute = modifies how an element behaves
+<p> = paragraph of text
+    <p> by default, come with margin at the top and bottom
+<a> = anchor element (link to another website)
+    <a herf="url.com" target="_blank">description</a>
+        target = determine opening a the new link in new tab or not
+
+
+class attribute = label of elements
+<button> = a button
+    <button class="next-button">
+
+<style>
+    .next-button {
+        color: black;
+        color: rgb (000, 000, 000); <!--rgb color-->
+        color: #000000; <!--Hex color-->
+        <!--padding helps align the text inside the button-->
+        padding-top
+        padding-bottom
+        padding-left
+        padding-right
+        transition: opacity 1s;<!--set the time it takes to transition to different style-->
+    }
+
+    .next-button:hover {
+        <!--it only applies when the cursor hovers over the button-->
+        cursor: pointer; <!--it turns the cursor into a pointer-->
+        box-shadow: horizontal vertical blurr color;
+    }
+
+    .next-button:active {
+        <!--it only applies when the button is being clicked-->
+    }
+</style>
+It specifically targets next-button class
+
+General technique:
+    1. Create element with HTML
+    2. Style with CSS one-by-one
+
+Text Style
+background-color: black;
+font-family: Arial;
+font-size: 20px;
+color: white;
+font-weight: bold;
+font-style: italic;
+font-align: center;
+width: 200px;
+line-height: 30px;
+margin-top: 10px;
+margin-bottom: 10px;
+
+Text Element
+<span class="">
+
+Use margin-left to add whitespace
+
+HTML entity
+
+CSS Specificity
+The selector that is more specific has higher priority
+class name selector > element name selector
+
+<head> = contains all elements that are not visible on the web page
+<body> = contains all elements that are visible on the web page
