@@ -25,8 +25,9 @@ Multi-line comments
 - All objects of a given class share a common set of methods
 
 modifier return-type method-name (parameter-list) {  
-
+  
 }  
+
 #### API Docs
 - Java classes are grouped into packages
 - You do not need to import classes in the java.lang package such String, Math, and System
@@ -133,4 +134,108 @@ String lastName = in.next();
 - Use the next method of the Scanner class to read a string containing a single word
 
 ### 2-2
-#### 
+#### Comparing Values
+- To test whether two strings are equal to each other, use the equals method
+
+if (string1.equals(string2))  
+&nbsp;&nbsp;&nbsp;&nbsp;...  
+
+- Don't use == for strings
+    - == tests if two strings are stored in the same memory location
+
+string1.compareTo(string2) < 0 // string1 comes before string2 in the dictionary  
+string1.compareTo(string2) > 0 // string2 comes before string1 in the dictionary  
+string1.compareTo(string2) == 0 // string1 and string2 are equal  
+
+- All uppercase letters come before the lowercase letters ("Z" comes before "a")
+- The space character comes before all printable characters
+- Numbers come before letters
+- Use equals method to test if two objects have the same content
+- null reference refers to no object
+- Use == to test for null
+- null is not the same as the empty string ""
+
+#### Summary
+- The if statement allows a program to carry out different actions depending on the nature of the data to be processed
+- The == operator tests for equal object references; the equals method tests for equal contents
+    - Use the equals method to compare strings
+- The null reference refers to no object
+- Multiple if statements can be combined and nested to evaluate complex decisions
+- The boolean type has two values, true and false
+- Boolean operators are && (and), || (or), ! (not)
+
+#### Quiz Highlights
+##### Week 1-1
+- which of the following are handled differently in Java than they are in Python?
+    - Double/single quotation marks
+    - Typing
+    - Compilation/interpretation
+    - White space
+
+Rectangle box = new Rectangle(5, 10, 15, 20);  
+box.grow(5, 5); // x == 0, y == 5, width == 25, height = 30  
+box.translate(25, 40); // x == 25, y == 45  
+
+#### Week 1-2
+- Variable names cannot begin with numbers
+- Variable names must be a single word with no whitespace in between
+- What does the following statement print?
+
+System.out.println(new Rectangle().getWidth()); // It prints 0  
+
+- Is the toUpperCase method of the String class an accessor or a mutator?
+
+Accessor  
+
+- How can you use the methods of the public interface to empty emilysChecking bankaccount?
+
+emilysChecking.withdraw.(emilysChecking.getBalance());  
+
+- How many implicit and explicit parameters does the withdraw method of the BankAccount class have?
+    - 1 implicit, 1 explicit
+    - There are always one implicit parameter which is the object that the method is attached to
+
+##### Week 2-1
+- Which one of the following is a different  between local variables and parameter variables?
+    - Parameter variables are initialized with the call values; local variables must be explicitly initialized
+- How many implicit and explicit parameters does the following deposit mehtod of the BankAccount class have, and what are their names and types?
+
+public void deposit(double amount) {  
+&nbsp;&nbsp;&nbsp;&nbsp;balance = balance + amount;  
+}  
+
+- One implicit parameter, called this, of type BankAccount, and one explicit parameter, called amount, of type double
+- What is the difference between the following two statements?
+
+final double CM_PER_INCH = 2.54;
+public static final double CM_PER_INCH = 2.54;
+
+- The first declaration is likely declared inside a method, the second one inside a class
+- What is printed by the below code segment?
+
+int x = (int) Math.random() * 26 + 18;  
+System.out.println(x); // x = 18  
+// It prints 18 because cast operator has higher precedence than multiple operator  
+// Therefore, (int) Math.random returns 0 and then 0 * 26 + 18 = 18
+
+##### Week 2-2
+- Consider the following sequence of statements:
+
+if (a > b) {  
+&nbsp;&nbsp;&nbsp;&nbsp;return a;  
+}  else {  
+&nbsp;&nbsp;&nbsp;&nbsp;return b;  
+}  
+
+- How could you write the same code in one line using the conditional operator?
+
+return a > b ? a : b;  
+
+- What is the value of s.length() if s is
+    - (a) the empty string ""?
+    - (b) the string " " containing a space?
+    - (c) null?
+(a) 0; (b) 1; (c) exception occurs  
+- Suppose x and y are two integers. How do you test whether exactly one of them is zero?
+
+((x == 0) && (y != 0)) || ((x != 0) && (y == 0));  
