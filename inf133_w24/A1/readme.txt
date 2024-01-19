@@ -40,12 +40,16 @@ Approximately 50 hours.
 
 
 4. What online resources did you consult when completing this assignment? (list specific URLs)
-
+https://www.youtube.com/watch?v=qz0aGYrrlhU
+https://kb.blackbaud.com/knowledgebase/Article/103613
+https://developers.google.com/fonts/docs/getting_started
+https://fonts.google.com/specimen/Open+Sans?query=open
+https://developer.mozilla.org/en-US/docs/Web/CSS/Nesting_selector
 
 
 5. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-
-
+I scheduled a office hour meeting with the TA, Leyu Lyu, to solve some errors on my CSS file.
+Other than that, I completed the assignment all by my own.
 
 6. Is there anything special we need to know in order to run your code?
-
+Nope.

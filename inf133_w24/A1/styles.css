@@ -15,7 +15,7 @@ body {
     margin: 0px;
 }
 
-li a {
+/* li a {
     color: rgb(200, 200, 200);
     display: block;
     float: left;
@@ -28,6 +28,21 @@ li a {
         background-color: rgb(0, 0, 0);
         transition: 0.30s;
     }
+} */
+
+li a {
+    color: rgb(200, 200, 200);
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px;
+}
+
+li a:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    transition: 0.30s;   
 }
 
 .fa-github {
