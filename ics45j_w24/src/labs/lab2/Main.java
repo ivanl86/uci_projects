@@ -19,7 +19,8 @@ public class Main {
 	 */
 	public static int problem1_getDiscount(int numItemsBought, int numClientsReferred) {
 		final int MAX_DISCOUNT = 75;
-		return Math.min(numItemsBought + numClientsReferred, MAX_DISCOUNT); // FIX ME
+		return (numItemsBought + numClientsReferred) < MAX_DISCOUNT ? (numItemsBought + numClientsReferred) : MAX_DISCOUNT;
+//		return Math.min(numItemsBought + numClientsReferred, MAX_DISCOUNT); // FIX ME
 	}
 	
 	
@@ -249,7 +250,7 @@ public class Main {
 		System.out.print("Enter country name: ");
 		frenchName = in.next();
 		
-		if (frenchName.charAt(frenchName.length() - 1) == 's') {
+		if (frenchName.equalsIgnoreCase("Etats-Unis") || frenchName.equalsIgnoreCase("Pays-Bas")) {
 			System.out.print("les " + frenchName);
 			return;
 		}
@@ -290,7 +291,7 @@ public class Main {
 	 */
 	public static void problem10_getSoundLevel(Scanner in) {
 		// FILL IN
-		final double REFERENCE_SOUND_LEVEL = 20;
+		final double REFERENCE_SOUND_LEVEL = 20E-6;
 		final String DECIBEL = "dB";
 		final String PASCAL = "Pa";
 		final String INVALID_UNIT = "Invalid unit";
@@ -304,19 +305,23 @@ public class Main {
 		soundLevel = in.nextDouble();
 		unit = in.next();
 		
-		if (soundLevel < 0 && !unit.equalsIgnoreCase(DECIBEL) && !unit.equalsIgnoreCase(PASCAL)) {
+		if (soundLevel < 0 && !unit.equals(DECIBEL) && !unit.equals(PASCAL)) {
 			System.out.print(INVALID_BOTH);
 			return;
 		}
 		
 		
-		if (!unit.equalsIgnoreCase(DECIBEL) && !unit.equalsIgnoreCase(PASCAL)) {
+		if (!unit.equals(DECIBEL) && !unit.equals(PASCAL)) {
 			System.out.print(INVALID_UNIT);
 			return;
 		}
 		
-		if (unit.equalsIgnoreCase(PASCAL)) {
-			soundLevel = 10 * Math.log10(soundLevel / REFERENCE_SOUND_LEVEL);
+		if (soundLevel < 0) {
+			System.out.print(INVALID_SOUND_LEVEL);
+		}
+		
+		if (unit.equals(PASCAL)) {
+			soundLevel = 20 * Math.log10(soundLevel / REFERENCE_SOUND_LEVEL);
 		}
 
 
@@ -343,22 +348,20 @@ public class Main {
 		
 	}
 	
-	public static void printMiddle(String str) {
-
-		int mid = str.length() / 2;
-
-		System.out.println(str.substring(mid - 1, mid + 2));
-
-		}
+//	public static void printMiddle(String str) {
+//
+//		int mid = str.length() / 2;
+//
+//		System.out.println(str.substring(mid - 1, mid + 2));
+//
+//		}
 	
 	public static void main(String[] args) {
 //		problem2_printWithCommas(new Scanner(System.in));
 		
 //		problem5_compoundInterest(new Scanner(System.in));
-//		problem10_getSoundLevel(new Scanner(System.in));
-		printMiddle("Candy");
-		printMiddle("and");
-		printMiddle("solving");
+		problem10_getSoundLevel(new Scanner(System.in));
+
 	}
 
 }

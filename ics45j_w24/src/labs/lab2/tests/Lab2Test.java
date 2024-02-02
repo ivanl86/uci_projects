@@ -22,6 +22,9 @@ public class Lab2Test {
 		assertEquals(59, Main.problem1_getDiscount(56, 3));
 		assertEquals(75, Main.problem1_getDiscount(156, 13));
 		assertEquals(0, Main.problem1_getDiscount(0, 0));
+		assertEquals(75, Main.problem1_getDiscount(70, 5));
+		assertEquals(3, Main.problem1_getDiscount(0, 3));
+		assertEquals(75, Main.problem1_getDiscount(48, 28));
 	}
 	
 	@Test
@@ -66,12 +69,66 @@ public class Lab2Test {
 		Main.problem2_printWithCommas(new Scanner(System.in));
 		result = output.toString();
 		assertEquals("Please enter an integer between 1000 and 999999: 523,303", result);
+	
+		// Test case 4:
+		input = "1000\n";
+		
+		in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		output = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(output));
+		
+		Main.problem2_printWithCommas(new Scanner(System.in));
+		result = output.toString();
+		assertEquals("Please enter an integer between 1000 and 999999: 1,000", result);
+		
+		// Test case 5:
+		input = "999999\n";
+		
+		in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		output = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(output));
+		
+		Main.problem2_printWithCommas(new Scanner(System.in));
+		result = output.toString();
+		assertEquals("Please enter an integer between 1000 and 999999: 999,999", result);
+	
+		// Test case 6:
+		input = "34862\n";
+		
+		in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		output = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(output));
+		
+		Main.problem2_printWithCommas(new Scanner(System.in));
+		result = output.toString();
+		assertEquals("Please enter an integer between 1000 and 999999: 34,862", result);
+	
+		// Test case 7:
+		input = "90240\n";
+		
+		in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		output = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(output));
+		
+		Main.problem2_printWithCommas(new Scanner(System.in));
+		result = output.toString();
+		assertEquals("Please enter an integer between 1000 and 999999: 90,240", result);
 	}
 	
     @Test
     public void test_problem3() {
         assertEquals("1 6 3 8 4", Main.problem3_printDigits(16384));
         assertEquals("2 2 2 5 0", Main.problem3_printDigits(22250));
+        assertEquals("1 1 1 1 1", Main.problem3_printDigits(11111));
+        assertEquals("7 6 1 4 3", Main.problem3_printDigits(76143));
     }
     
 	@Test
@@ -668,6 +725,58 @@ public class Lab2Test {
 		Main.problem10_getSoundLevel(new Scanner(System.in));
 		result = output.toString();
 		assertEquals("Enter sound level and unit (dB or Pa): Invalid sound level", result);
+		
+		// Test case 9:
+		input = "0.00002 Pa\n";
+		
+		in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		output = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(output));
+		
+		Main.problem10_getSoundLevel(new Scanner(System.in));
+		result = output.toString();
+		assertEquals("Enter sound level and unit (dB or Pa): Light leaf rustling", result);
+//		
+//		// Test case 10:
+//		input = "-0.0 Pa\n";
+//		
+//		in = new ByteArrayInputStream(input.getBytes());
+//		System.setIn(in);
+//		
+//		output = new ByteArrayOutputStream();
+//		System.setOut(new PrintStream(output));
+//		
+//		Main.problem10_getSoundLevel(new Scanner(System.in));
+//		result = output.toString();
+//		assertEquals("Enter sound level and unit (dB or Pa): Light leaf rustling", result);
+		
+		// Test case 11:
+		input = "0.0 dB\n";
+		
+		in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		output = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(output));
+		
+		Main.problem10_getSoundLevel(new Scanner(System.in));
+		result = output.toString();
+		assertEquals("Enter sound level and unit (dB or Pa): Light leaf rustling", result);
+		
+		// Test case 12:
+		input = "-0.0 dB\n";
+		
+		in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		output = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(output));
+		
+		Main.problem10_getSoundLevel(new Scanner(System.in));
+		result = output.toString();
+		assertEquals("Enter sound level and unit (dB or Pa): Light leaf rustling", result);
 	}
 
 }
