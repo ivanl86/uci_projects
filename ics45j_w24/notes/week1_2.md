@@ -207,8 +207,8 @@ public void deposit(double amount) {
 - One implicit parameter, called this, of type BankAccount, and one explicit parameter, called amount, of type double
 - What is the difference between the following two statements?
 
-final double CM_PER_INCH = 2.54;
-public static final double CM_PER_INCH = 2.54;
+final double CM_PER_INCH = 2.54;  
+public static final double CM_PER_INCH = 2.54;  
 
 - The first declaration is likely declared inside a method, the second one inside a class
 - What is printed by the below code segment?
@@ -235,7 +235,9 @@ return a > b ? a : b;
     - (a) the empty string ""?
     - (b) the string " " containing a space?
     - (c) null?
+
 (a) 0; (b) 1; (c) exception occurs  
+
 - Suppose x and y are two integers. How do you test whether exactly one of them is zero?
 
 ((x == 0) && (y != 0)) || ((x != 0) && (y == 0));  
