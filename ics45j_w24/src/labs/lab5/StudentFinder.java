@@ -12,12 +12,20 @@ public class StudentFinder {
 	 * @return first Student
 	 */
 	public static Student firstStudent(Student[] students) {
-		Student first = students[0];
+		Student first = null;
+		
+		if (students == null) {
+			return null;
+		}
+		
+		first = students[0];
+		
 		for (int i = 1; i < students.length; ++i) {
 			if (first.compareTo(students[i]) > 0) {
 				first = students[i];
 			}
 		}
+		
 		return first; // FIX ME
 	}
 
@@ -29,12 +37,20 @@ public class StudentFinder {
 	 * @return last Student
 	 */
 	public static Student lastStudent(Student[] students) {
-		Student last = students[0];
+		Student last = null;
+		
+		if (students == null) {
+			return null;
+		}
+		
+		last = students[0];
+		
 		for (int i = 1; i < students.length; ++i) {
 			if (last.compareTo(students[i]) < 0) {
 				last = students[i];
 			}
 		}
+		
 		return last; // FIX ME
 	}
 

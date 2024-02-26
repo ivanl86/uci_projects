@@ -8,8 +8,8 @@ package labs.lab5;
 public abstract class Enemy implements Attackable {
 
 	// ADD YOUR INSTANCE VARIABLES HERE
-	private static int MAX_HEALTH;
-	private static int MIN_HEALTH;
+	private static final int MIN_HEALTH = 0;
+	private static final int MAX_HEALTH = 100;
 	private int health;
 
 	/**
@@ -17,8 +17,6 @@ public abstract class Enemy implements Attackable {
 	 */
 	public Enemy() {
 		// FILL IN
-		MIN_HEALTH = 0;
-		MAX_HEALTH = 100;
 		health = MAX_HEALTH;
 	}
 

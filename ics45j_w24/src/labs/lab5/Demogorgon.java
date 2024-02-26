@@ -8,6 +8,7 @@ package labs.lab5;
 public class Demogorgon extends Enemy {
 
 	// ADD YOUR INSTANCE VARIABLES HERE
+	private static final double MIN_WEIGHT = 0.0;
 	private double weight;
 
 	/**
@@ -17,7 +18,11 @@ public class Demogorgon extends Enemy {
 	 */
 	public Demogorgon(double weight) {
 		// FILL IN
-		this.weight = weight;
+		if (weight < MIN_WEIGHT) {
+			this.weight = MIN_WEIGHT;
+		} else {
+			this.weight = weight;
+		}
 	}
 
 
@@ -36,6 +41,11 @@ public class Demogorgon extends Enemy {
 	 */
 	public int attack() {
 		weight -= (weight * 0.10);
+		
+		if (weight < MIN_WEIGHT) {
+			this.weight = MIN_WEIGHT;
+		}
+		
 		setHealth(getHealth() - 15);
 		return 0; // FIX ME
 	}

@@ -7,6 +7,8 @@ package labs.lab5;
 public class Player {
 
 	// ADD YOUR INSTANCE VARIABLES HERE
+	private static final int MIN_STRENGTH = 0;
+	private static final int MIN_AMMO = 0;
 	private String name;
 	private int strength;
 	private int ammo;
@@ -54,15 +56,23 @@ public class Player {
 	 */
 	public boolean collectItem(Collectible c) {
 		if (c instanceof PowerUp && !((PowerUp) c).isCollected()) {
-//			PowerUp powerup = (PowerUp) c;
-//			strength += ((PowerUp) c).getInitialPointValue();
 			strength += ((PowerUp) c).collect();
+			if (strength < MIN_STRENGTH) {
+				strength = MIN_STRENGTH;
+			}
 			return true;
 		}
 		if (c instanceof Ammo && !((Ammo) c).isCollected()) {
-//			ammo += ((Ammo) c).getNumAmmo();
-			ammo += ((Ammo) c).collect();
-			return true;
+			if (strength >= ((Ammo) c).getWeight() * 10) {
+				ammo += ((Ammo) c).collect();
+				
+				if (ammo < MIN_AMMO) {
+					ammo = MIN_AMMO;
+				}
+				
+				return true;
+			}
+			
 		}
 		return false; // FIX ME
 	}
@@ -79,10 +89,16 @@ public class Player {
 	public boolean attackEnemy(Enemy enemy) {
 		if (ammo > 0) {
 			--ammo;
-			;
+			
 			strength += enemy.attack();
+			
+			if (strength < MIN_STRENGTH) {
+				strength = MIN_STRENGTH;
+			}
+			
 			return true;
 		}
+		
 		return false; // FIX ME
 	}
 

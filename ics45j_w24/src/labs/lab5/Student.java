@@ -53,6 +53,7 @@ public class Student implements Comparable {
 		if (otherObject instanceof Student) {
 			return name == ((Student) otherObject).getName() && id == ((Student) otherObject).getId();
 		}
+		
 		return false; // FIX ME
 	}
 
@@ -66,6 +67,7 @@ public class Student implements Comparable {
 	 */
 	public int compareTo(Object other) {
 		Student otherStudent = (Student) other;
+		
 		if (name.compareTo(otherStudent.getName()) < 0) {
 			return -1;
 		}
@@ -78,6 +80,7 @@ public class Student implements Comparable {
 		if (id > otherStudent.getId()) {
 			return 1;
 		}
+		
 		return 0; // FIX ME
 	}
 

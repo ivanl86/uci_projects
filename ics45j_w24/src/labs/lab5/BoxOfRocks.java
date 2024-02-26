@@ -9,8 +9,8 @@ package labs.lab5;
 public class BoxOfRocks extends Ammo {
 
 	// ADD YOUR INSTANCE VARIABLES HERE
-	private static double SOLID = 0.5;
-	private static double HOLLOW = 0.25;
+	private static final double SOLID = 0.5;
+	private static final double HOLLOW = 0.25;
 	private boolean hollow;
 	private boolean collected;
 

@@ -8,6 +8,7 @@ package labs.lab5;
 public abstract class Ammo implements Collectible {
 
 	// ADD YOUR INSTANCE VARIABLES HERE
+	private static final double MIN_WEIGHT = 0.0;
 	private double weight;
 
 	/**
@@ -17,7 +18,12 @@ public abstract class Ammo implements Collectible {
 	 */
 	public Ammo(double weight) {
 		// FILL IN
-		this.weight = weight;
+		if (weight < MIN_WEIGHT) {
+			this.weight = MIN_WEIGHT;
+		} else {
+			this.weight = weight;
+		}
+		
 	}
 
 

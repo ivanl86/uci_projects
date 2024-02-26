@@ -8,6 +8,7 @@ package labs.lab5;
 public class Bugaboo extends Enemy {
 
 	// ADD YOUR INSTANCE VARIABLES HERE
+	private static final double MIN_STRENGTH = 0.0;
 	private double strength;
 
 	/**
@@ -17,7 +18,12 @@ public class Bugaboo extends Enemy {
 	 */
 	public Bugaboo(double strength) {
 		// FILL IN
-		this.strength = strength;
+		if (strength < MIN_STRENGTH) {
+			this.strength = MIN_STRENGTH;
+		} else {
+			this.strength = strength;
+		}
+		
 	}
 
 
@@ -35,6 +41,11 @@ public class Bugaboo extends Enemy {
 	 */
 	public int attack() {
 		strength -= (strength * 0.25);
+		
+		if (strength < 0) {
+			strength = MIN_STRENGTH;
+		}
+		
 		return 0; // FIX ME
 	}
 

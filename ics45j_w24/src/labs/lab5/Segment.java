@@ -19,6 +19,10 @@ public class Segment implements CharSequence {
 	 */
 	public Segment(String data, int start, int end) {
 		// FILL IN
+		if (end < start || start < 0 || end < 0) {
+			throw new IndexOutOfBoundsException();
+		}
+		
 		this.data = data.substring(start, end);
 //		this.start = 0;
 		this.end = end - start;
@@ -52,6 +56,10 @@ public class Segment implements CharSequence {
 	 */
 	@Override
 	public CharSequence subSequence(int start, int end) {
+		if (end < start || start < 0 || end < 0) {
+			throw new IndexOutOfBoundsException();
+		}
+		
 		return data.substring(start, end); // FIX ME
 	}
 

@@ -7,6 +7,7 @@ package labs.lab5;
 public abstract class PowerUp implements Collectible {
 
 	// ADD YOUR INSTANCE VARIABLES HERE
+	private static final int MIN_VALUE = 0;
 	private int initialPointValue;
 
 	/**
@@ -16,7 +17,11 @@ public abstract class PowerUp implements Collectible {
 	 */
 	public PowerUp(int initialPointValue) {
 		// FILL IN
-		this.initialPointValue = initialPointValue;
+		if (initialPointValue < MIN_VALUE) {
+			this.initialPointValue = MIN_VALUE;
+		} else {
+			this.initialPointValue = initialPointValue;			
+		}
 	}
 
 
