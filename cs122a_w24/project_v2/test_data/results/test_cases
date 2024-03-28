@@ -1,0 +1,25 @@
+mkdir output
+
+# Test 0 test import data
+python3 project.py import private_data &>> output/result0.txt
+
+# Test 1 test insert student
+python3 project.py insertStudent testID test@uci.edu Alice NULL Wong &>> output/result1.txt
+
+# Test 2 test listCourse
+python3 project.py listCourse mchang13 &>> output/result2.txt
+
+# Test 3 test popularCourse
+python3 project.py popularCourse 3 &>> output/result3.txt
+
+# Test 4 test adminEmails
+python3 project.py adminEmails 1 &>> output/result4.txt
+
+# Test 5 test activeStudent
+python3 project.py activeStudent 4 2 "2020-01-01" "2020-05-10" &>> output/result5.txt
+
+# Test 6 test machineUsage
+python3 project.py machineUsage 4 &>> output/result6.txt
+
+# Test 7 test insert duplicate student
+python3 project.py insertStudent testID test@uci.edu Alice NULL Wong &>> output/result7.txt

@@ -1,0 +1,3 @@
+1,Computer Graphics,F23
+4,Introduction to Data Management,S24
+5,Project in Databases and Web Applications,S24
