@@ -3,7 +3,7 @@ package labs.lab8;
 /**
  * A class for executing binary searches through an array.
  */
-public class BinarySearcher<T extends Comparable<T>> implements Comparable<BinarySearcher<T>> {
+public class BinarySearcher<T extends Comparable<T>> {
 
 	private T[] a;
 
@@ -56,13 +56,4 @@ public class BinarySearcher<T extends Comparable<T>> implements Comparable<Binar
 	      System.out.println(searcher.search("October"));
 	      System.out.println("Expected: -1");
 	   }
-
-
-	@Override
-	public int compareTo(BinarySearcher<T> o) {
-		// <strong> Why does it pass all the test cases when compareTo method is empty? </strong>
-		// Do I need to implement compareTo method and how?
-		return 0;
-	}
-
 }

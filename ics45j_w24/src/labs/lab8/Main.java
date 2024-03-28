@@ -1,11 +1,8 @@
 package labs.lab8;
 
-import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class Main {
 	
@@ -21,14 +18,11 @@ public class Main {
 	 * @return	a List<Pair<K, V>> of the  key/value pairs in the map
 	 */
 	// WRITE YOUR PROBLEM 1 METHOD HERE
-	public static List<Pair<String, Color>> problem1_mapToList(Map<String, Color> colors) {
-		// TODO Auto-generated method stub
-		List<Pair<String, Color>> list = new ArrayList<>();
-		Iterator<String> iter = colors.keySet().iterator();
+	public static <K, V> List<Pair<K, V>> problem1_mapToList(Map<K, V> map) {
+		List<Pair<K, V>> list = new ArrayList<>();
 		
-		while (iter.hasNext()) {
-			String name = iter.next();
-			list.add(new Pair<String, Color>(name, colors.get(name)));
+		for (Map.Entry<K, V> entry : map.entrySet()) {
+			list.add(new Pair<K, V>(entry.getKey(), entry.getValue()));
 		}
 		
 		return list;
@@ -63,9 +57,9 @@ public class Main {
 	 * @return true if decreasing, false if not
 	 */
 	// WRITE PROBLEM 4 METHOD HERE
-	public static <T> boolean problem4_isDecreasing(List<T> list) {
+	public static <T extends Comparable<T>> boolean problem4_isDecreasing(List<T> list) {
 		for (int i = 0; i < list.size() - 1; ++i) {
-			if (((Comparable<T>) list.get(i)).compareTo(list.get(i + 1)) < 0) {
+			if ((list.get(i)).compareTo(list.get(i + 1)) < 0) {
 				return false;
 			}
 		}

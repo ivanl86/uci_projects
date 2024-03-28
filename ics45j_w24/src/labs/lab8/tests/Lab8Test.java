@@ -73,6 +73,9 @@ public class Lab8Test {
 
 		List<Integer> nums = Arrays.asList(new Integer[] { 1, 2, 3, 4, 5 });
 		assertEquals("1, 2, 3, 4, 5", IterableUtil.print(nums));
+		String empty = "";
+		it = Arrays.asList(empty.split(" "));
+		assertEquals("", IterableUtil.print(it));
 	}
 	
 	@Test
@@ -135,6 +138,13 @@ public class Lab8Test {
 		
 		g.add("Robert");
 		assertTrue(Main.problem4_isDecreasing(g));
+		
+//		List<Integer> h = new ArrayList<>();
+//		h.add(22);
+//		h.add(22);
+//		h.add(22);
+//		h.add(22);
+//		assertTrue(Main.problem4_isDecreasing(h));
 	}
 	
     @Test

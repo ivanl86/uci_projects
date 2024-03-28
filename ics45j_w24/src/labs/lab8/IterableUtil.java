@@ -10,6 +10,7 @@ public class IterableUtil {
 	 * space
 	 * 
 	 * @param <T>	type of object that implements Iterable
+	 * @param <E>
 	 * @param <E>	the Iterable type
 	 * @param iterable	the object that is Iterable
 	 * 
@@ -17,13 +18,16 @@ public class IterableUtil {
 	 * comma and a space
 	 */
 	// WRITE YOUR PRINT METHOD HERE
-	public static <E> String print(Iterable<E> arr) {
-		// Do I need both T and E types
+	public static <T extends Iterable<E>, E> String print(T arr) {
 		String str = "";
 		Iterator<E> iter = arr.iterator();
 		
 		while (iter.hasNext()) {
 			str += iter.next() + ", ";
+		}
+		
+		if (str.length() == 0) {
+			return str;
 		}
 		
 		return str.substring(0, str.length() - 2);
