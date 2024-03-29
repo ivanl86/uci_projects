@@ -69,3 +69,10 @@ class name selector > element name selector
 
 <head> = contains all elements that are not visible on the web page
 <body> = contains all elements that are visible on the web page
+
+Javascript
+
+callback
+map
+filter
+reduce
