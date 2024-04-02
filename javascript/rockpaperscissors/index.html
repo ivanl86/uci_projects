@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Rock - Papaer - Scissors</h1>
+    <div class="choices">
+        <button id="rock" onclick="playGame('rock')">
+            <i class="fa-solid fa-hand-back-fist"></i>
+        </button>
+        <button id="paper" onclick="playGame('paper')">
+            <i class="fa-solid fa-hand"></i>
+        </button>
+        <button id="scissors" onclick="playGame('scissors')">
+            <i class="fa-solid fa-hand-scissors"></i>
+        </button>
+    </div>
+    <div id="player-choice">PLAYER: </div>
+    <div id="computer-choice">COMPUTER: </div>
+    <div id="display-result"></div>
+    <div class="display-scores">Player Score: <span id="player-score">0</span></div>
+    <div class="display-scores">Computer Score: <span id="computer-score">0</span></div>
+
+    <script src="index.js"></script>
+
+    <script src="https://kit.fontawesome.com/342b5e5d6b.js" crossorigin="anonymous"></script>
+</body>
+</html>
